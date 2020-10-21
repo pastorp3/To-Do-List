@@ -1,3 +1,5 @@
+import {render} from './render';
+
 class Library {
   constructor() {
     this.myprojects = [];
@@ -20,6 +22,10 @@ class Library {
   		const child = document.createElement('div');
   		div.appendChild(child);
   		child.textContent = this.myprojects[i].title;
+      child.setAttribute('id', this.myprojects[i].title);
+      child.addEventListener('click', show => {
+        render(this.myprojects[i]);
+      });
 
   	};
   };

@@ -42,3 +42,32 @@ body {
 	font-size: 20px;
 	color: blue;
 }
+
+.card {
+	margin: 35px;
+	background-color: white;
+	min-height: 100vh;
+	border-radius: 5px;
+}
+
+.header-card {
+	padding: 10px 10px 0 50px;
+	font-size: 35px;
+}
+
+.text-padding {
+	padding-left: 50px;
+}
+
+.addtaskbttn {
+	font-size: 20px;
+	color: blue;
+}
+
+.margin-right {
+	margin-right: 30px;
+}
+
+.hide {
+	display: none;
+}
