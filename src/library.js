@@ -1,5 +1,6 @@
 import {render} from './render';
 import view from './viewtasks';
+import save from './save';
 
 class Library {
   constructor() {
@@ -21,14 +22,38 @@ class Library {
   	for(let i = 0; i < this.myprojects.length; i++) {
   		  		
   		const child = document.createElement('div');
+      const text = document.createElement('span');
+      const deletebttn = document.createElement('button');
   		div.appendChild(child);
-  		child.textContent = this.myprojects[i].title;
+      child.appendChild(text);
+      child.appendChild(deletebttn);
+  		text.textContent = this.myprojects[i].title;
       child.setAttribute('id', this.myprojects[i].title);
-      child.addEventListener('click', show => {
-        render(this.myprojects[i]);
-        view(this.myprojects[i]);
+      deletebttn.setAttribute('class','input');
+      deletebttn.setAttribute('type','button');
+      text.setAttribute('class','margin-right-trashicon');
 
+      deletebttn.addEventListener('click',deleteproject => {
+        this.myprojects.splice(i,1);
+        this.viewprojects();
+        
       });
+
+
+      deletebttn.innerHTML = '<img class="trashicon" src="https://cdn2.iconfinder.com/data/icons/business-1-58/48/69-512.png">';
+      text.addEventListener('click', show => {
+   
+          render(this.myprojects[i],this.myprojects);
+          view(this.myprojects[i]);
+          
+      });
+
+      if(this.myprojects[i].title === 'Todos') {
+          render(this.myprojects[i],this.myprojects);
+          view(this.myprojects[i]);
+        };
+
+
 
   	};
   };

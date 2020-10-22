@@ -1,5 +1,7 @@
 import Task from './addtask';
 import view from './viewtasks';
+import todos from './todos';
+import save from './save';
 
 let addcounter = 0;
 
@@ -80,6 +82,7 @@ function form(id) {
 		form.reset();		
 		hide();
 		view(id);
+		
 	});
 
 
@@ -91,38 +94,36 @@ function form(id) {
 
 
 
-const render = (id) => {
-	const container = document.getElementById('container-right');
-	clearcontainer(container);
-	const div = document.createElement('div');
-	const child = document.createElement('div');
-	const titleDiv = document.createElement('div');
-	const border = document.createElement('hr');
-	const taskContainer = document.createElement('div');
-	const formContainer = document.createElement('div');
-	
+const render = (id,lib) => {
+	if (id.title === 'Todos') {
+		todos(id,lib);
+	} else {
+		const container = document.getElementById('container-right');
+		clearcontainer(container);
+		const div = document.createElement('div');
+		const child = document.createElement('div');
+		const titleDiv = document.createElement('div');
+		const border = document.createElement('hr');
+		const taskContainer = document.createElement('div');
+		const formContainer = document.createElement('div');
+		
 
-	container.appendChild(div);
-	div.appendChild(child);
-	div.setAttribute('class', 'card');
-	
-	child.appendChild(titleDiv);
-	child.appendChild(border);
-	child.appendChild(taskContainer);
-	child.appendChild(formContainer);
-	taskContainer.setAttribute('id','tasks');
-	formContainer.setAttribute('id','tasksform');
-	form(id);
-
-	console.log(id);
-	
-
-
-
-	titleDiv.textContent = `${id.title}`;
-	titleDiv.setAttribute('class','header-card ');
-	border.setAttribute('class', 'borderline');
-
+		container.appendChild(div);
+		div.appendChild(child);
+		div.setAttribute('class', 'card');
+		
+		child.appendChild(titleDiv);
+		child.appendChild(border);
+		child.appendChild(taskContainer);
+		child.appendChild(formContainer);
+		taskContainer.setAttribute('id','tasks');
+		formContainer.setAttribute('id','tasksform');
+		form(id);
+		
+		titleDiv.textContent = `${id.title}`;
+		titleDiv.setAttribute('class','header-card ');
+		border.setAttribute('class', 'borderline');
+	}
 };
 
-export { render, clearcontainer };
+export { render, clearcontainer, form };
