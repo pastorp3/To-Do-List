@@ -71,3 +71,42 @@ body {
 .hide {
 	display: none;
 }
+
+.prioritybttn-low {
+	outline: none;
+	border: 1px solid green;
+	border-radius: 50%;
+    height: 13px;
+    margin-left: 5px;
+    margin-right: 15px;
+    background-color: white;
+}
+
+.prioritybttn-medium {
+	outline: none;
+	border: 1px solid orange;
+	border-radius: 50%;
+    height: 13px;
+    margin-left: 5px;
+    margin-right: 15px;
+    background-color: white;
+}
+
+.prioritybttn-high {
+	outline: none;
+	border: 1px solid red;
+	border-radius: 50%;
+    height: 13px;
+    margin-left: 5px;
+    margin-right: 15px;
+    background-color: white;
+}
+
+.complete {
+	text-decoration: line-through;
+}
+
+.completebtn {
+	border: 1px solid black;
+	background-color: black;
+}

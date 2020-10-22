@@ -1,3 +1,6 @@
+import Task from './addtask';
+import view from './viewtasks';
+
 let addcounter = 0;
 
 function clearcontainer(container){
@@ -15,15 +18,18 @@ function hide() {
 	date.classList.toggle('hide');
 }
 
-function submitform(){
+function submitform(id){
 	const text = document.getElementById('inputtask');
 	const option = document.getElementById('selectpriority');
 	const date = document.getElementById('date');
-	console.log(date.value);
+	const task = new Task(text.value,option.value,date.value);
+	console.log(task);
+	id.tasks.push(task);
 	addcounter = 1;
+	
 };
 
-function form() {
+function form(id) {
 	const formcontainer = document.getElementById('tasksform');
 	const form = document.createElement('form');
 	const input = document.createElement('input');
@@ -67,13 +73,13 @@ function form() {
 	input.addEventListener('click', hide);
 
 	button.addEventListener('click', submit => {
-		if (addcounter === 0){
-			submitform();
-		} else {
-			addcounter = 0;
-		};		
-
+	
+		submitform(id);
+			
+		const form = document.getElementsByTagName('form')[1];
+		form.reset();		
 		hide();
+		view(id);
 	});
 
 
@@ -106,7 +112,9 @@ const render = (id) => {
 	child.appendChild(formContainer);
 	taskContainer.setAttribute('id','tasks');
 	formContainer.setAttribute('id','tasksform');
-	form();
+	form(id);
+
+	console.log(id);
 	
 
 
@@ -114,10 +122,7 @@ const render = (id) => {
 	titleDiv.textContent = `${id.title}`;
 	titleDiv.setAttribute('class','header-card ');
 	border.setAttribute('class', 'borderline');
-	
-
-	console.log(id);
 
 };
 
-export { render };
+export { render, clearcontainer };

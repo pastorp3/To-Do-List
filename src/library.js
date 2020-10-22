@@ -1,4 +1,5 @@
 import {render} from './render';
+import view from './viewtasks';
 
 class Library {
   constructor() {
@@ -25,6 +26,8 @@ class Library {
       child.setAttribute('id', this.myprojects[i].title);
       child.addEventListener('click', show => {
         render(this.myprojects[i]);
+        view(this.myprojects[i]);
+
       });
 
   	};
