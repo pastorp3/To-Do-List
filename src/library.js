@@ -8,12 +8,13 @@ class Library {
     this.projects_cont = document.getElementById('projects-container');
   };
 
-  addProject(project) {
+  addProject(project,mainLib) {
   	this.myprojects.push(project)
-  	this.viewprojects();
+  	this.viewprojects(mainLib);
+
   };
 
-  viewprojects() {
+  viewprojects(mainLib) {
   	this.clear();
   	const div = document.createElement('div');
   	const container = document.getElementById('projects-container');
@@ -43,14 +44,15 @@ class Library {
       deletebttn.innerHTML = '<img class="trashicon" src="https://cdn2.iconfinder.com/data/icons/business-1-58/48/69-512.png">';
       text.addEventListener('click', show => {
    
-          render(this.myprojects[i],this.myprojects);
-          view(this.myprojects[i]);
-          
+          render(this.myprojects[i],this.myprojects,mainLib);
+          view(this.myprojects[i],mainLib);
+          save(mainLib);   
       });
 
       if(this.myprojects[i].title === 'Todos') {
-          render(this.myprojects[i],this.myprojects);
-          view(this.myprojects[i]);
+          render(this.myprojects[i],this.myprojects,mainLib);
+          view(this.myprojects[i],mainLib);
+          save(mainLib);
         };
 
 

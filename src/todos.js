@@ -2,7 +2,7 @@ import { clearcontainer, form } from './render';
 import view from './viewtasks';
 import viewtodos from './viewtodos';
 
-const todos = (id,lib) => {
+const todos = (id,lib,mainLib) => {
 		const container = document.getElementById('container-right');
 		clearcontainer(container);
 		const div = document.createElement('div');
@@ -36,7 +36,7 @@ const todos = (id,lib) => {
 			projecttitle.textContent = `${lib[i].title}:`;
 			projecttitle.setAttribute('class','todos-project');
 
-			viewtodos(lib[i],i);
+			viewtodos(lib[i],i,mainLib);
 			
 
 			

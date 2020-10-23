@@ -14,22 +14,15 @@ const datasaved = JSON.parse(localStorage["library"]);
 if(datasaved.myprojects.length > 0) {
 	for(let i = 0; i < datasaved.myprojects.length; i++) {
 		console.log(datasaved.myprojects[i]);
-		library.addProject(datasaved.myprojects[i]);
+		library.addProject(datasaved.myprojects[i],library);
 	};
 }else {
 	library.addProject(todosview);
 };
 
-
-
-
-console.log(datasaved);;
-
-
-
 addproject.addEventListener('click', add => {
 	const project = new Project(text.value);
-	library.addProject(project);
+	library.addProject(project,library);
 	form.reset();
 	save(library);
 });

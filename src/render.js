@@ -31,7 +31,7 @@ function submitform(id){
 	
 };
 
-function form(id) {
+function form(id,mainLib) {
 	const formcontainer = document.getElementById('tasksform');
 	const form = document.createElement('form');
 	const input = document.createElement('input');
@@ -82,6 +82,7 @@ function form(id) {
 		form.reset();		
 		hide();
 		view(id);
+		save(mainLib);
 		
 	});
 
@@ -94,9 +95,9 @@ function form(id) {
 
 
 
-const render = (id,lib) => {
+const render = (id,lib,mainLib) => {
 	if (id.title === 'Todos') {
-		todos(id,lib);
+		todos(id,lib,mainLib);
 	} else {
 		const container = document.getElementById('container-right');
 		clearcontainer(container);
@@ -118,7 +119,7 @@ const render = (id,lib) => {
 		child.appendChild(formContainer);
 		taskContainer.setAttribute('id','tasks');
 		formContainer.setAttribute('id','tasksform');
-		form(id);
+		form(id,mainLib);
 		
 		titleDiv.textContent = `${id.title}`;
 		titleDiv.setAttribute('class','header-card ');

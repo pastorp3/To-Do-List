@@ -1,6 +1,6 @@
 import save from './save';
 
-const viewtodos = (id,index) => {
+const viewtodos = (id,index,mainLib) => {
 	const container = document.getElementById(`${index}`);
 
 	const tasks = id.tasks;
@@ -50,6 +50,8 @@ const viewtodos = (id,index) => {
 				} else {
 					tasks[i].status = 'pending';
 				};
+
+				save(mainLib);
 
 			});
 		

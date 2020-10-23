@@ -1,7 +1,7 @@
 import { clearcontainer } from './render';
 import save from './save';
 
-const view = (id) => {
+const view = (id,mainLib) => {
 	const container = document.getElementById('tasks');
 	clearcontainer(container);
 	const divTasks = document.createElement('div');
@@ -58,6 +58,8 @@ const view = (id) => {
 				} else {
 					tasks[i].status = 'pending';
 				};
+
+				save(mainLib);
 				
 
 			});
@@ -66,6 +68,7 @@ const view = (id) => {
 				tasks.splice(i,1);
 				console.log(tasks);
 				view(id);
+				save(mainLib);
 				
 			});
 		
