@@ -7,6 +7,6 @@ class Task {
     this.id = id;
     this.status = 'pending';
     id += 1;
-  };
-};
+  }
+}
 export default Task;
