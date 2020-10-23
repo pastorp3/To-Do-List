@@ -35,6 +35,7 @@ class Library {
       deletebttn.addEventListener('click', deleteproject => {
         this.myprojects.splice(i, 1);
         this.viewprojects();
+        save(mainLib);
       });
       deletebttn.innerHTML = '<img class="trashicon" src="https://cdn2.iconfinder.com/data/icons/business-1-58/48/69-512.png">';
       text.addEventListener('click', show => {
