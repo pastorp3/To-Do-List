@@ -1,6 +1,9 @@
+/* eslint-disable  no-unused-vars */
+
 import { render } from './render';
 import view from './viewtasks';
 import save from './save';
+
 class Library {
   constructor() {
     this.myprojects = [];
@@ -40,18 +43,18 @@ class Library {
         save(mainLib);
       });
       if (this.myprojects[i].title === 'Todos') {
-        render(this.myprojects[i], this.myprojects, mainLib)
-        view(this.myprojects[i], mainLib)
-        save(mainLib)
-      };
-    };
-  };
+        render(this.myprojects[i], this.myprojects, mainLib);
+        view(this.myprojects[i], mainLib);
+        save(mainLib);
+      }
+    }
+  }
 
   clear() {
     const parent = this.projects_cont
     while (parent.firstChild) {
       parent.removeChild(parent.firstChild)
-    };
+    }
   }
-};
+}
 export default Library;
