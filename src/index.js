@@ -1,3 +1,5 @@
+/* eslint-disable  no-unused-vars */
+
 import Library from './library';
 import Project from './project';
 import save from './save';
@@ -9,11 +11,11 @@ const text = document.querySelector('.input');
 const todosview = new Project('Todos');
 const a = localStorage.getItem('counter');
 if (a == null) {
-	library.addProject(todosview);
+  library.addProject(todosview);
 } else {
   const datasaved = JSON.parse(localStorage.library);
   if (datasaved.myprojects.length > 0) {
-    for (let i = 0; i < datasaved.myprojects.length; i+= 1) {
+    for (let i = 0; i < datasaved.myprojects.length; i += 1) {
       library.addProject(datasaved.myprojects[i], library);
     }
   }

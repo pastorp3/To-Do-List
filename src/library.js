@@ -5,17 +5,19 @@ class Library {
   constructor() {
     this.myprojects = [];
     this.projects_cont = document.getElementById('projects-container');
-  };
+  }
+
   addProject(project, mainLib) {
-    this.myprojects.push(project)
+    this.myprojects.push(project);
     this.viewprojects(mainLib);
-  };
+  }
+
   viewprojects(mainLib) {
     this.clear();
     const div = document.createElement('div');
     const container = document.getElementById('projects-container');
     container.appendChild(div);
-    for (let i = 0; i < this.myprojects.length; i++) {
+    for (let i = 0; i < this.myprojects.length; i += 1) {
       const child = document.createElement('div');
       const text = document.createElement('span');
       const deletebttn = document.createElement('button');
@@ -38,16 +40,17 @@ class Library {
         save(mainLib);
       });
       if (this.myprojects[i].title === 'Todos') {
-        render(this.myprojects[i], this.myprojects, mainLib);
-        view(this.myprojects[i], mainLib);
-        save(mainLib);
+        render(this.myprojects[i], this.myprojects, mainLib)
+        view(this.myprojects[i], mainLib)
+        save(mainLib)
       };
     };
   };
+
   clear() {
-    let parent = this.projects_cont;
+    const parent = this.projects_cont
     while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
+      parent.removeChild(parent.firstChild)
     };
   }
 };
