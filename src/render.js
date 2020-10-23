@@ -86,14 +86,7 @@ function form(id,mainLib) {
 		
 	});
 
-
-
-
-
-
-}
-
-
+};
 
 const render = (id,lib,mainLib) => {
 	if (id.title === 'Todos') {
@@ -124,7 +117,7 @@ const render = (id,lib,mainLib) => {
 		titleDiv.textContent = `${id.title}`;
 		titleDiv.setAttribute('class','header-card ');
 		border.setAttribute('class', 'borderline');
-	}
+	};
 };
 
 export { render, clearcontainer, form };
