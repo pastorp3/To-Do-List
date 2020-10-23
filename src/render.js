@@ -1,14 +1,17 @@
+/* eslint-disable  no-unused-vars, import/no-cycle */
+
 import Task from './addtask';
 import view from './viewtasks';
 import todos from './todos';
 import save from './save';
+
 let addcounter = 0;
 
 function clearcontainer(container) {
   while (container.firstChild) {
     container.removeChild(container.firstChild);
-  };
-};
+  }
+}
 
 function hide() {
   const prioritytext = document.getElementById('textpriority');
@@ -24,10 +27,9 @@ function submitform(id) {
   const option = document.getElementById('selectpriority');
   const date = document.getElementById('date');
   const task = new Task(text.value, option.value, date.value);
-  console.log(task);
   id.tasks.push(task);
   addcounter = 1;
-};
+}
 
 function form(id, mainLib) {
   const formcontainer = document.getElementById('tasksform');
@@ -59,14 +61,14 @@ function form(id, mainLib) {
   op1.textContent = 'low';
   op2.textContent = 'medium';
   op3.textContent = 'high';
-  priority.textContent = 'Prority: '
+  priority.textContent = 'Prority: ';
   priority.setAttribute('class', 'hide');
   priority.setAttribute('id', 'textpriority');
   select.setAttribute('class', 'margin-right input hide');
   select.setAttribute('id', 'selectpriority');
   date.setAttribute('type', 'date');
   date.setAttribute('class', 'input hide margin-right');
-  date.setAttribute('id', 'date')
+  date.setAttribute('id', 'date');
   input.addEventListener('click', hide);
   button.addEventListener('click', submit => {
     submitform(id);
@@ -76,7 +78,7 @@ function form(id, mainLib) {
     view(id);
     save(mainLib);
   });
-};
+}
 const render = (id, lib, mainLib) => {
   if (id.title === 'Todos') {
     todos(id, lib, mainLib);
@@ -103,5 +105,5 @@ const render = (id, lib, mainLib) => {
     titleDiv.setAttribute('class', 'header-card ');
     border.setAttribute('class', 'borderline');
   };
-};
+}
 export { render, clearcontainer, form };
