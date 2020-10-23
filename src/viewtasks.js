@@ -1,7 +1,8 @@
-/* eslint-disable  no-unused-vars, import/no-cycle */
+/* eslint-disable  no-unused-vars, import/no-cycle,  prefer-destructuring */
 
 import { clearcontainer } from './render';
 import save from './save';
+
 const view = (id, mainLib) => {
   const container = document.getElementById('tasks');
   clearcontainer(container);
