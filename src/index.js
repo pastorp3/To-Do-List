@@ -6,29 +6,22 @@ const addproject = document.querySelector('.addporjectbutton');
 const form = document.getElementsByTagName('form')[0];
 const text = document.querySelector('.input');
 let todosview = new Project('Todos');
-const datasaved = JSON.parse(localStorage["library"]);
-if (datasaved.myprojects.length > 0) {
-  for (let i = 0; i < datasaved.myprojects.length; i++) {
-    console.log(datasaved.myprojects[i]);
-    library.addProject(datasaved.myprojects[i], library);
-  };
+const a = localStorage.getItem('counter');
+if (a == null){
+	library.addProject(todosview);
 } else {
-  library.addProject(todosview);
+  const datasaved = JSON.parse(localStorage.library);
+  if (datasaved.myprojects.length > 0) {
+    for (let i = 0; i < datasaved.myprojects.length; i++) {
+      console.log(datasaved.myprojects[i]);
+      library.addProject(datasaved.myprojects[i], library);
+    };
+  }
 };
+
 addproject.addEventListener('click', add => {
   const project = new Project(text.value);
   library.addProject(project, library);
   form.reset();
   save(library);
 });
-
-
-
-
-
-
-
-
-
-
-
