@@ -1,4 +1,4 @@
-/* eslint-disable  no-unused-vars, prefer-destructuring*/
+/* eslint-disable  no-unused-vars, prefer-destructuring */
 
 import save from './save';
 
