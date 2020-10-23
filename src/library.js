@@ -51,9 +51,9 @@ class Library {
   }
 
   clear() {
-    const parent = this.projects_cont
+    const parent = this.projects_cont;
     while (parent.firstChild) {
-      parent.removeChild(parent.firstChild)
+      parent.removeChild(parent.firstChild);
     }
   }
 }
