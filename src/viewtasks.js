@@ -1,6 +1,6 @@
-import {
-  clearcontainer
-} from './render';
+/* eslint-disable  no-unused-vars, import/no-cycle */
+
+import { clearcontainer } from './render';
 import save from './save';
 const view = (id, mainLib) => {
   const container = document.getElementById('tasks');
@@ -9,7 +9,7 @@ const view = (id, mainLib) => {
   const tasks = id.tasks;
   container.appendChild(divTasks);
   divTasks.setAttribute('class', 'text-padding');
-  for (let i = 0; i < tasks.length; i++) {
+  for (let i = 0; i < tasks.length; i += 1) {
     const div = document.createElement('div');
     const title = document.createElement('span');
     const date = document.createElement('span');
@@ -31,9 +31,9 @@ const view = (id, mainLib) => {
     if (tasks[i].status === 'complete') {
       title.classList.toggle('complete');
       date.classList.toggle('complete');
-    };
+    }
     if (tasks[i].priority === 'low') {
-      prioritybtn.setAttribute('class', 'prioritybttn-low')
+      prioritybtn.setAttribute('class', 'prioritybttn-low');
     } else if (tasks[i].priority === 'medium') {
       prioritybtn.setAttribute('class', 'prioritybttn-medium ');
     } else {
@@ -47,15 +47,14 @@ const view = (id, mainLib) => {
         tasks[i].status = 'complete';
       } else {
         tasks[i].status = 'pending';
-      };
+      }
       save(mainLib);
     });
     deletebttn.addEventListener('click', deletetask => {
       tasks.splice(i, 1);
-      console.log(tasks);
       view(id);
       save(mainLib);
     });
-  };
+  }
 };
 export default view;

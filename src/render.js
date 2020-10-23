@@ -104,6 +104,6 @@ const render = (id, lib, mainLib) => {
     titleDiv.textContent = `${id.title}`;
     titleDiv.setAttribute('class', 'header-card ');
     border.setAttribute('class', 'borderline');
-  };
-}
+  }
+};
 export { render, clearcontainer, form };
