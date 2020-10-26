@@ -1,9 +1,9 @@
-/* eslint-disable  no-unused-vars, import/no-cycle,  prefer-destructuring */
+/* eslint-disable  no-unused-vars, import/no-cycle,  prefer-destructuring, no-use-before-define */
 
 import { clearcontainer } from './render';
 import save from './save';
 
-function update(id,index,mainLib) {
+function update(id, index, mainLib) {
   const object = id.tasks[index];
   const text = document.getElementById('inputtask-edit');
   const option = document.getElementById('selectpriority-edit');
@@ -15,10 +15,10 @@ function update(id,index,mainLib) {
   object.description = description.value;
   object.id = text.value;
   save(mainLib);
-  view(id,mainLib);
+  view(id, mainLib);
 }
 
-function editFrom (id,task,index,mainLib) {
+function editFrom(id, task, index, mainLib) {
   const container = document.getElementById(id);
   const form = document.createElement('form');
   const title = document.createElement('input');
@@ -29,7 +29,7 @@ function editFrom (id,task,index,mainLib) {
   const op1 = document.createElement('option');
   const op2 = document.createElement('option');
   const op3 = document.createElement('option');
-  const date = document.createElement('input'); 
+  const date = document.createElement('input');
   container.appendChild(form);
   form.appendChild(title);
   form.appendChild(description);
@@ -40,16 +40,16 @@ function editFrom (id,task,index,mainLib) {
   select.appendChild(op3);
   form.appendChild(date);
   form.appendChild(button);
-  form.setAttribute('id','edit-form');
+  form.setAttribute('id', 'edit-form');
   title.setAttribute('class', 'input');
   title.setAttribute('placeholder', 'New title...');
   title.setAttribute('id', 'inputtask-edit');
-  description.setAttribute('class','margin-right');
-  description.setAttribute('id','description-edit');
+  description.setAttribute('class', 'margin-right');
+  description.setAttribute('id', 'description-edit');
   button.textContent = '+';
   button.setAttribute('class', 'addtaskbttn input');
   button.setAttribute('type', 'button');
-  button.setAttribute('id','bttn-edit');
+  button.setAttribute('id', 'bttn-edit');
   op1.textContent = 'low';
   op2.textContent = 'medium';
   op3.textContent = 'high';
@@ -61,9 +61,9 @@ function editFrom (id,task,index,mainLib) {
   date.setAttribute('class', 'input  margin-right');
   date.setAttribute('id', 'date-edit');
   button.addEventListener('click', submit => {
-    update(task,index,mainLib);
+    update(task, index, mainLib);
   });
-};
+}
 
 
 const view = (id, mainLib) => {
@@ -79,7 +79,7 @@ const view = (id, mainLib) => {
     const description = document.createElement('span');
     const date = document.createElement('span');
     const prioritybtn = document.createElement('button');
-    const editbttn =  document.createElement('button');
+    const editbttn = document.createElement('button');
     const deletebttn = document.createElement('button');
     divTasks.appendChild(div);
     div.appendChild(prioritybtn);
@@ -94,9 +94,8 @@ const view = (id, mainLib) => {
     title.textContent = `${tasks[i].title}`;
     date.textContent = `${tasks[i].date}`;
     description.textContent = `${tasks[i].description}`;
-    
-    editbttn.setAttribute('type','button');
-    editbttn.setAttribute('class','input');
+    editbttn.setAttribute('type', 'button');
+    editbttn.setAttribute('class', 'input');
     editbttn.innerHTML = '<img class="trashicon" src="https://cdn0.iconfinder.com/data/icons/glyphpack/19/edit-512.png">';
     deletebttn.setAttribute('class', 'input');
     deletebttn.setAttribute('type', 'button');
@@ -125,7 +124,7 @@ const view = (id, mainLib) => {
     });
 
     editbttn.addEventListener('click', edittask => {
-      editFrom(tasks[i].id,id,i,mainLib);
+      editFrom(tasks[i].id, id, i, mainLib);
     });
 
     deletebttn.addEventListener('click', deletetask => {

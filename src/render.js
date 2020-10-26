@@ -60,8 +60,8 @@ function form(id, mainLib) {
   input.setAttribute('class', 'input');
   input.setAttribute('placeholder', 'Add new task..');
   input.setAttribute('id', 'inputtask');
-  description.setAttribute('class','margin-right  hide');
-  description.setAttribute('id','description');
+  description.setAttribute('class', 'margin-right hide');
+  description.setAttribute('id', 'description');
   button.textContent = '+';
   button.setAttribute('class', 'addtaskbttn input');
   button.setAttribute('type', 'button');
