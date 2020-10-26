@@ -1,0 +1,126 @@
+body {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	color: gray;
+}
+
+#container-left {
+	min-width: 20%;
+	min-height: 100vh;
+}
+
+#container-right {
+	min-width: 80%;
+	min-height: 100vh;
+	background-color: blue;
+
+}
+
+.title {
+	font-size: 30px;
+	font-weight: 500;
+	padding-left: 20px;
+}
+
+.borderline{
+	width: 90%;
+}
+
+.padding-left {
+	padding-left: 20px;
+}
+
+.input {
+	outline: none;
+	border: 0;
+	background-color: white;
+}
+
+.addporjectbutton {
+	font-size: 20px;
+	color: blue;
+}
+
+.card {
+	margin: 35px;
+	background-color: white;
+	min-height: 100vh;
+	border-radius: 5px;
+}
+
+.header-card {
+	padding: 10px 10px 0 50px;
+	font-size: 35px;
+}
+
+.text-padding {
+	padding-left: 50px;
+}
+
+
+.addtaskbttn {
+	font-size: 20px;
+	color: blue;
+}
+
+.margin-right {
+	margin-right: 30px;
+}
+.margin-right-trashicon {
+	margin-right: 50px;
+}
+
+.hide {
+	display: none;
+}
+
+.prioritybttn-low {
+	outline: none;
+	border: 1px solid green;
+	border-radius: 50%;
+    height: 13px;
+    margin-left: 5px;
+    margin-right: 15px;
+    background-color: white;
+}
+
+.prioritybttn-medium {
+	outline: none;
+	border: 1px solid orange;
+	border-radius: 50%;
+    height: 13px;
+    margin-left: 5px;
+    margin-right: 15px;
+    background-color: white;
+}
+
+.prioritybttn-high {
+	outline: none;
+	border: 1px solid red;
+	border-radius: 50%;
+    height: 13px;
+    margin-left: 5px;
+    margin-right: 15px;
+    background-color: white;
+}
+
+.complete {
+	text-decoration: line-through;
+}
+
+.completebtn {
+	border: 1px solid black;
+	background-color: black;
+}
+
+.trashicon {
+	width: 15px;
+}
+
+.todos-project {
+	color: black;
+	font-weight: 500;
+	font-size: 20px;
+}
