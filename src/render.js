@@ -17,16 +17,19 @@ function hide() {
   const prioritytext = document.getElementById('textpriority');
   const select = document.getElementById('selectpriority');
   const date = document.getElementById('date');
+  const description = document.getElementById('description');
   prioritytext.classList.toggle('hide');
   select.classList.toggle('hide');
   date.classList.toggle('hide');
+  description.classList.toggle('hide');
 }
 
 function submitform(id) {
   const text = document.getElementById('inputtask');
   const option = document.getElementById('selectpriority');
   const date = document.getElementById('date');
-  const task = new Task(text.value, option.value, date.value);
+  const description = document.getElementById('description');
+  const task = new Task(text.value, option.value, date.value, description.value);
   id.tasks.push(task);
   addcounter = 1;
 }
@@ -35,6 +38,7 @@ function form(id, mainLib) {
   const formcontainer = document.getElementById('tasksform');
   const form = document.createElement('form');
   const input = document.createElement('input');
+  const description = document.createElement('textarea');
   const button = document.createElement('button');
   const select = document.createElement('select');
   const priority = document.createElement('span');
@@ -44,6 +48,7 @@ function form(id, mainLib) {
   const date = document.createElement('input');
   formcontainer.appendChild(form);
   form.appendChild(input);
+  form.appendChild(description);
   form.appendChild(priority);
   form.appendChild(select);
   select.appendChild(op1);
@@ -55,6 +60,8 @@ function form(id, mainLib) {
   input.setAttribute('class', 'input');
   input.setAttribute('placeholder', 'Add new task..');
   input.setAttribute('id', 'inputtask');
+  description.setAttribute('class','margin-right  hide');
+  description.setAttribute('id','description');
   button.textContent = '+';
   button.setAttribute('class', 'addtaskbttn input');
   button.setAttribute('type', 'button');

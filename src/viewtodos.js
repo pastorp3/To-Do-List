@@ -12,16 +12,19 @@ const viewtodos = (id, index, mainLib) => {
     const div = document.createElement('div');
     const title = document.createElement('span');
     const date = document.createElement('span');
+    const desciption = document.createElement('span');
     const prioritybtn = document.createElement('button');
     divTasks.appendChild(div);
     div.appendChild(prioritybtn);
     div.appendChild(title);
     div.appendChild(date);
+    div.appendChild(desciption);
     div.setAttribute('id', `${tasks[i].id}`);
     title.setAttribute('class', 'margin-right');
     date.setAttribute('class', 'margin-right');
     title.textContent = `${tasks[i].title}`;
     date.textContent = `${tasks[i].date}`;
+    desciption.textContent = `${tasks[i].description}`;
     if (tasks[i].status === 'complete') {
       title.classList.toggle('complete');
       date.classList.toggle('complete');

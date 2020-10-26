@@ -1,12 +1,11 @@
-let id = 0;
 class Task {
-  constructor(title, priority, date) {
+  constructor(title, priority, date, description) {
     this.title = title;
     this.priority = priority;
     this.date = date;
-    this.id = id;
+    this.description = description;
+    this.id = title;
     this.status = 'pending';
-    id += 1;
   }
 }
 export default Task;
