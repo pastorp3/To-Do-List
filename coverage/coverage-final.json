@@ -1,0 +1,2 @@
+{"/home/pastor/Documentos/Microverse/Js/To-Do-List/test/e.js": {"path":"/home/pastor/Documentos/Microverse/Js/To-Do-List/test/e.js","statementMap":{"0":{"start":{"line":2,"column":1},"end":{"line":2,"column":14}}},"fnMap":{"0":{"name":"sum","decl":{"start":{"line":1,"column":9},"end":{"line":1,"column":12}},"loc":{"start":{"line":1,"column":18},"end":{"line":3,"column":1}},"line":1}},"branchMap":{},"s":{"0":1},"f":{"0":1},"b":{},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"a2eccce86c4f1853d933d57752932b0d24573110"}
+}
