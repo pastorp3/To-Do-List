@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1604442737093" clover="3.2.0">
-  <project timestamp="1604442737093" name="All files">
+<coverage generated="1604443104557" clover="3.2.0">
+  <project timestamp="1604443104557" name="All files">
     <metrics statements="316" coveredstatements="16" conditionals="20" coveredconditionals="0" methods="25" coveredmethods="3" elements="361" coveredelements="19" complexity="0" loc="316" ncloc="316" packages="1" files="8" classes="8"/>
     <file name="addproject.js" path="/home/pastor/Documentos/Microverse/Js/To-Do-List/src/addproject.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
