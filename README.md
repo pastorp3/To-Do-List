@@ -41,10 +41,9 @@ Then open the file index.html in the dist folder
 ### Testing
 
 If you already clone the repo run next command in the root:
+
 ``
-
 yarn add --dev jest
-
 ``
 
 Then run:
