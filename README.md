@@ -18,7 +18,6 @@ All the functionality and assets presented in the page are generated using JavaS
 
 [Live Demo Link](https://rawcdn.githack.com/pastorp3/To-Do-List/0194c2dddbc0b36f506f306351ffcaa4b70f924e/dist/index.html)
 
-
 ### Loacl Copy
 
 Clone the repo with:
@@ -37,6 +36,24 @@ npx webpack
 ``
 
 Then open the file index.html in the dist folder
+
+
+### Testing
+
+If you already clone the repo run next command in the root:
+``
+
+yarn add --dev jest
+
+``
+
+Then run:
+
+``
+npm test
+``
+
+You can see all the tests and also the potential of each file to be tested.
 
 ## Authors
 
