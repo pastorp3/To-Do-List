@@ -133,5 +133,6 @@ const view = (id, mainLib) => {
       save(mainLib);
     });
   }
+  return id;
 };
 export default view;

@@ -48,5 +48,6 @@ const viewtodos = (id, index, mainLib) => {
       save(mainLib);
     });
   }
+  return id;
 };
 export default viewtodos;

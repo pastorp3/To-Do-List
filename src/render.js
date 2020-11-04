@@ -85,6 +85,7 @@ function form(id, mainLib) {
     view(id);
     save(mainLib);
   });
+  return true;
 }
 const render = (id, lib, mainLib) => {
   if (id.title === 'Todos') {
@@ -112,5 +113,6 @@ const render = (id, lib, mainLib) => {
     titleDiv.setAttribute('class', 'header-card ');
     border.setAttribute('class', 'borderline');
   }
+  return true;
 };
-export { render, clearcontainer, form };
+export { render, clearcontainer, form , submitform };

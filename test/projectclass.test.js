@@ -13,17 +13,6 @@ it('check if the Project title is the same than the input', () => {
   expect(project.title).toBe('test');
 });
 
-it('check if a Task can be created', () => {
-  expect(task1).toBeDefined();
-});
-
-it('check if Task take the correct input', () => {
-  expect(task1.title).toBe('test');
-  expect(task1.priority).toBe('low');
-  expect(task1.date).toBe('12/03/2000');
-  expect(task1.description).toBe('This is a test');
-});
-
 it('check if a project have a task', () => {
   project.tasks.push(task1);
   expect(project.tasks[0]).toBeDefined();

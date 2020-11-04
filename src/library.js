@@ -13,6 +13,7 @@ class Library {
   addProject(project, mainLib) {
     this.myprojects.push(project);
     this.viewprojects(mainLib);
+    return this.myprojects;
   }
 
   viewprojects(mainLib) {
@@ -49,6 +50,7 @@ class Library {
         save(mainLib);
       }
     }
+    return mainLib;
   }
 
   clear() {
