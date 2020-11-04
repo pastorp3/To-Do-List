@@ -33,5 +33,6 @@ const todos = (id, lib, mainLib) => {
     projecttitle.setAttribute('class', 'todos-project');
     viewtodos(lib[i], i, mainLib);
   }
+  return true;
 };
 export default todos;
