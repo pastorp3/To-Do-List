@@ -115,4 +115,6 @@ const render = (id, lib, mainLib) => {
   }
   return true;
 };
-export { render, clearcontainer, form , submitform };
+export {
+ render, clearcontainer, form, submitform, 
+};
